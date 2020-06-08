@@ -15,6 +15,7 @@ namespace VirtaMed.Connect.API
     {
         public static void Main(string[] args)
         {
+            Console.Title = "API";
             var host = CreateHostBuilder(args).Build();
             SeedData(host);
             host.Run();
@@ -36,7 +37,7 @@ namespace VirtaMed.Connect.API
                 {
                     dataInitializer.Initialize();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     //Log errors or do anything you think it's needed
                     throw;
