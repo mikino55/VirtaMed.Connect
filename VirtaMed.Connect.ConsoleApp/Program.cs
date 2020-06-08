@@ -26,6 +26,7 @@ namespace VirtaMed.Connect.ConsoleApp
 
         static async Task Main(string[] args)
         {
+            Console.Title = "Console client";
             foreach (var executor in executors)
             {
                 try
@@ -34,6 +35,8 @@ namespace VirtaMed.Connect.ConsoleApp
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex.Message);
+                    Console.ReadKey();
                 }
             }           
         }

@@ -51,6 +51,18 @@ namespace VirtaMed.IdentityProvider
                     ClientSecrets = { new Secret("secret".Sha256()) },
                     AllowedScopes = { "openid" , "profile", "Connect.API", "email" }
                 },
+                 new Client
+                {
+                    ClientId = "Blazor.Client",
+                    ClientName = "Blazor Client",
+                    RequireClientSecret = false,
+                    AllowedGrantTypes = GrantTypes.Code,
+                    AllowedScopes = { "openid" , "profile", "Connect.API", "email" },
+                    RequirePkce = true,
+                    AllowedCorsOrigins = { "https://localhost:7001" },
+                    RedirectUris = { "https://localhost:7001/authentication/login-callback" },
+                    PostLogoutRedirectUris = { "https://localhost:7001/" },
+                },
             };
 
         public static List<TestUser> TestUsers = new List<TestUser>

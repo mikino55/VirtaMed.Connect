@@ -4,8 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using VirtaMed.IdentityProvider.Data;
 
 namespace VirtaMed.IdentityProvider
 {
@@ -13,14 +15,29 @@ namespace VirtaMed.IdentityProvider
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            Console.Title = "IDP";
+            CreateHostBuilder(args).Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+        public static IHost CreateHostBuilder(string[] args)
+        {
+            IHost host = Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                }).Build();
+
+
+            var seed = args.Contains("/seed");
+            if (seed)
+            {
+                var config = host.Services.GetRequiredService<IConfiguration>();
+                var connectionString = config.GetConnectionString("DefaultConnection");
+                SeedData.EnsureSeedData(connectionString);
+                Environment.Exit(0);
+            }
+
+            return host;
+        }
     }
 }

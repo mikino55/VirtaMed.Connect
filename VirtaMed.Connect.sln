@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtaMed.Connect.ConsoleApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtaMed.Services", "VirtaMed.Services\VirtaMed.Services.csproj", "{37F727FE-9170-438F-B646-AD61B69FB273}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtaMed.IdentityProvider", "VirtaMed.IdentityProvider\VirtaMed.IdentityProvider.csproj", "{BB8BCCCF-8418-43DC-9B6F-EFC7FBC70655}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtaMed.IdentityProvider", "VirtaMed.IdentityProvider\VirtaMed.IdentityProvider.csproj", "{BB8BCCCF-8418-43DC-9B6F-EFC7FBC70655}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtaMed.Connect.Blazor.Client", "VirtaMed.Connect.Blazor.Client\VirtaMed.Connect.Blazor.Client.csproj", "{A4272735-2424-408B-81BC-9D840B9DD244}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{BB8BCCCF-8418-43DC-9B6F-EFC7FBC70655}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB8BCCCF-8418-43DC-9B6F-EFC7FBC70655}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB8BCCCF-8418-43DC-9B6F-EFC7FBC70655}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4272735-2424-408B-81BC-9D840B9DD244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4272735-2424-408B-81BC-9D840B9DD244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4272735-2424-408B-81BC-9D840B9DD244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4272735-2424-408B-81BC-9D840B9DD244}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
