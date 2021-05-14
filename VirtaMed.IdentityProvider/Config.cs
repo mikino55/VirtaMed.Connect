@@ -17,16 +17,14 @@ namespace VirtaMed.IdentityProvider
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),  
                 new IdentityResources.Email(),
-                //new IdentityResource("dummy.scope", "My dummy scope", new string [] { "name" })
+                new IdentityResource("dummy.scope", "My dummy scope", new string [] { "name" })
            };
 
         public static IEnumerable<ApiResource> Apis =>
             new ApiResource[]
             {
-                new ApiResource("Connect.API", "Connect API")
-                {
-                   
-                }
+                new ApiResource("Connect.API", "Connect API"),
+                new ApiResource("Connect.API2", "Connect API 2"),
             };
 
         public static IEnumerable<Client> Clients =>
