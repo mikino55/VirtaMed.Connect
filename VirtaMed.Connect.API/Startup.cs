@@ -29,7 +29,8 @@ namespace VirtaMed.Connect.API
             services.AddControllers();
             services.AddSingleton<IDataMapper, DataMapper>();
             services.AddMongoDBPersistence();
-            services.AddAuthentication("Bearer").AddJwtBearer("Bearer", options =>
+            services.AddAuthentication("Bearer")
+                .AddJwtBearer("Bearer", options =>
             {
                 options.Authority = "http://localhost:6000";
                 options.RequireHttpsMetadata = false;
